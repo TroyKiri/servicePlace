@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="button user-info__edit-button" data-popup='popup-edit-profile'>Edit</button>
+        </div>
+        <button class="button user-info__button" data-popup='popup-new-place'>+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+      <!-- Пример вёрстки карточки: -->
+
+       <!--<div class="place-card">
+        <div class="place-card__image" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
+          <button class="place-card__delete-icon"></button>
+        </div>
+        <div class="place-card__description">
+          <h3 class="place-card__name">Камчатка</h3>
+          <div class = 'place-card__like-group'>
+            <button class="place-card__like-icon"></button>
+            <p class ="place-card__like-count">0</p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- конец примера. -->
+
+    </div>
+    <div class="popup" id='popup-new-place'>
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form popup__form_new-place" name="newPlace">
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" minlength="2" maxlength="30" required>
+            <span class="popup__error-message"></span>
+            <input type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required>
+            <span class="popup__error-message"></span>
+            <button id="submit" type = 'submit' class="button popup__button">+</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id='popup-edit-profile'>
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form popup__form_new-profile" name="newProfile">
+            <input id="name" type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" minlength="2" maxlength="30" required>
+            <span class="popup__error-message"></span>
+            <input id="info" type="text" name="info" class="popup__input popup__input_type_link-url" placeholder="О себе" minlength="2" maxlength="30" required>
+            <span class="popup__error-message"></span>
+            <button type="submit" id="submit" class="button popup__button_save popup__button_active">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup imgpopup" id = 'image-popup'>
+      <div class="popup__image">
+        <img src="" alt="" class="popup__img">
+        <img src="./images/close.svg" alt="" class="popup__close">
+      </div>
+   </div>
+
+  </div>
+  <script src="js/Api.js"></script>
+  <script src="js/DeleteValidateErrors.js"></script>
+  <script src="js/FormValidator.js"></script>
+  <script src="js/UserInfo.js"></script>
+  <script src="js/Popup.js"></script>
+  <script src="js/Card.js"></script>
+  <script src="js/CardList.js"></script>
+  <!--<script src="js/initialCards.js"></script>-->
+  <script src="script.js"></script>
+</body>
+</html>
